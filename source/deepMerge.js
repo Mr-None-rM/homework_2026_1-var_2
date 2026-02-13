@@ -76,6 +76,18 @@ function deepMerge(source, target) {
   return mergedObject;
 }
 
+/**
+ * Функция, которая проверяет, является ли значение объектом
+ * 
+ * @param {*} value - проверяемое значение
+ * 
+ * @returns {boolean} - true, если это объект
+ * 
+ * @example
+ * isObject({}); // true
+ * isObject(null); // false
+ * isObject([1, 2, 3]); // false
+ */
 function isObject(value) {
   return Object.prototype.toString.call(value) === "[object Object]";
 }
