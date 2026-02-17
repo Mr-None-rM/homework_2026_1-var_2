@@ -90,6 +90,5 @@ const deepMerge = (source, target) => {
  * isObject([1, 2, 3]); // false
  */
 const isObject = (value) => {
-  return value !== null && typeof value === 'object' &&
-         !Array.isArray(value) && value.constructor === Object;
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
 }
