@@ -65,13 +65,22 @@ function deepMerge(source, target) {
 
   const mergedObject = Object.assign({}, source);
 
-  for (let key in target) {
-    if (Object.hasOwn(source, key) && isObject(target[key]) && isObject(source[key])) {
-      mergedObject[key] = deepMerge(source[key], target[key]);
+  Object.keys(target).forEach((key) => {
+    const value = target[key]
+    if (Object.hasOwn(source, key) && isObject(value) && isObject(source[key])) {
+      mergedObject[key] = deepMerge(source[key], value);
     } else {
-      mergedObject[key] = target[key];
+      mergedObject[key] = value;
     }
-  }
+  }) 
+
+  // for (let key in target) {
+  //   if (Object.hasOwn(source, key) && isObject(target[key]) && isObject(source[key])) {
+  //     mergedObject[key] = deepMerge(source[key], target[key]);
+  //   } else {
+  //     mergedObject[key] = target[key];
+  //   }
+  // }
 
   return mergedObject;
 }
@@ -89,5 +98,6 @@ function deepMerge(source, target) {
  * isObject([1, 2, 3]); // false
  */
 function isObject(value) {
-  return Object.prototype.toString.call(value) === "[object Object]";
+  return value !== null && typeof value === 'object' &&
+         !Array.isArray(value) && value.constructor === Object;
 }

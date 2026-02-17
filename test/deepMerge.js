@@ -93,7 +93,7 @@ QUnit.module("Тестируем функцию deepMerge", function() {
     });
 
     QUnit.test("Корректно выводит результат с неправильными входными данными", function(assert) {
-        const source = 1;
+        const source = null;
 
         const target = {
             name: "Иван",
