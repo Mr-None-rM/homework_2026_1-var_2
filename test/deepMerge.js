@@ -8,21 +8,21 @@ QUnit.module("Тестируем функцию deepMerge", function() {
                 age: 25,
                 address: {
                     city: "Wonderland",
-                    zip: 12345,
+                    zip: 12345
                 }
             },
-            hobbies: ["reading", "gaming"],
+            hobbies: ["reading", "gaming"]
         };
 
         const target = {
             user: {
                 age: 30,
                 address: {
-                    country: "Fantasyland",
+                    country: "Fantasyland"
                 }
             },
             hobbies: ["traveling"],
-            isActive: true,
+            isActive: true
         };
 
         const expected = {
@@ -32,11 +32,11 @@ QUnit.module("Тестируем функцию deepMerge", function() {
                 address: {
                     city: "Wonderland",
                     zip: 12345,
-                    country: "Fantasyland",
+                    country: "Fantasyland"
                 }
             },
             hobbies: ["traveling"],
-            isActive: true,
+            isActive: true
         };
 
         const result = deepMerge(source, target);
@@ -67,7 +67,7 @@ QUnit.module("Тестируем функцию deepMerge", function() {
     QUnit.test("Работает с пустым исходным объектом", function(assert) {
         const source = {
             name: "Алиса",
-            age: 25,
+            age: 25
         };
 
         const target = {};
